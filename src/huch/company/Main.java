@@ -85,11 +85,9 @@ public class Main {
 
         }
 
-
         System.out.println("My test = " + network.predict(new float[]{1, -1}));
         System.out.println("error = " + error);
         System.out.println("percent of error = " + ((float) error / test) * 100 + " %");
-
 
 
 
