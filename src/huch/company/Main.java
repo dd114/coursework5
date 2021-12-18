@@ -97,6 +97,7 @@ public class Main {
 
 
 
+
 //        System.out.println(network.predict(new float[]{0, 0, 1}));
 //        System.out.println(network.predict(new float[]{0, 1, 0}));
 //        System.out.println(network.predict(new float[]{0, 1, 1}));
