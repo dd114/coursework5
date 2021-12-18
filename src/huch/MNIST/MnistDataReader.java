@@ -4,7 +4,7 @@ import java.io.*;
 
 public class MnistDataReader  {
 
-    public MnistMatrix[] readData(String dataFilePath, String labelFilePath) throws IOException {
+    public MnistMatrix[] readData(String dataFilePath, String labelFilePath, boolean information) throws IOException {
 
         DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFilePath)));
         int magicNumber = dataInputStream.readInt();
@@ -12,17 +12,21 @@ public class MnistDataReader  {
         int nRows = dataInputStream.readInt();
         int nCols = dataInputStream.readInt();
 
-        System.out.println("magic number is " + magicNumber);
-        System.out.println("number of items is " + numberOfItems);
-        System.out.println("number of rows is: " + nRows);
-        System.out.println("number of cols is: " + nCols);
+        if(information) {
+            System.out.println("magic number is " + magicNumber);
+            System.out.println("number of items is " + numberOfItems);
+            System.out.println("number of rows is: " + nRows);
+            System.out.println("number of cols is: " + nCols);
+        }
 
         DataInputStream labelInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(labelFilePath)));
         int labelMagicNumber = labelInputStream.readInt();
         int numberOfLabels = labelInputStream.readInt();
 
-        System.out.println("labels magic number is: " + labelMagicNumber);
-        System.out.println("number of labels is: " + numberOfLabels);
+        if(information) {
+            System.out.println("labels magic number is: " + labelMagicNumber);
+            System.out.println("number of labels is: " + numberOfLabels);
+        }
 
         MnistMatrix[] data = new MnistMatrix[numberOfItems];
 
