@@ -89,7 +89,7 @@ public class Main {
         System.out.println("error = " + error);
         System.out.println("percent of error = " + ((float) error / test) * 100 + " %");
 
-
+        System.out.println("END");
 
 
 
