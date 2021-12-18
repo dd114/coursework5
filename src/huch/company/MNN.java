@@ -86,7 +86,11 @@ public class MNN {
             outputs_layer[i] = sigmoid_mapper(inputs_layer[i]);
         }
 
-//        for (float b : outputs_layer[outputs_layer.length - 1]) System.out.println(b); // выводим сигнал каждого выхода (результат каждого аутпута)
+//        for (float b : outputs_layer[outputs_layer.length - 1])  System.out.println(b); // выводим сигнал каждого выхода (результат каждого аутпута)
+
+        for (int i = 0; i < outputs_layer[outputs_layer.length - 1].length; i++) {
+            System.out.println(i + " = " + outputs_layer[outputs_layer.length - 1][i]);
+        }
 
         // находим максимальный из них, который и будет являться ответом
         for (int i = 0; i < outputs_layer[outputs_layer.length - 1].length; i++)
