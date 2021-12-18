@@ -3,7 +3,7 @@ package huch.company;
 import java.io.*;
 
 public class MNN {
-    private float learning_rate = 0.1f;
+    private float learning_rate = 0.01f;
     private float moment = 0.3f;
 
     public float[][][] overallLayer;
