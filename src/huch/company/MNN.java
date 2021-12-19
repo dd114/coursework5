@@ -105,12 +105,12 @@ public class MNN {
             for (int j = 0; j < overallLayer[i].length; j++) {
                 for (int k = 0; k < overallLayer[i][j].length - 1; k++) {
                     //по формуле произведения производной сигмоиды, на выход предыдущего слоя и ошибки плюс изменение весов (дельта весов) на предыдущей итерации помноженое на момент
-                    overallLayer[i][j][k] += learning_rate * error_neuron[i][j] * outputs_layer[i - 1][k] * derivativeActivation(inputs_layer[i][j]);
+                    overallLayer[i][j][k] -= learning_rate * error_neuron[i][j] * outputs_layer[i - 1][k] * derivativeActivation(inputs_layer[i][j]);
                     //запоминаем их тут, чтобы использовать на следующей итерации
 //                    deltaOverallLayer[i][j][k] = learning_rate * error_neuron[i][j] * outputs_layer[i][j] * (1 - outputs_layer[i][j]) * outputs_layer[i - 1][k];
                 }
                 // корректируем весы нейрона смещения
-                overallLayer[i][j][overallLayer[i][j].length - 1] += learning_rate * error_neuron[i][j] * 1 * derivativeActivation(inputs_layer[i][j]);
+                overallLayer[i][j][overallLayer[i][j].length - 1] -= learning_rate * error_neuron[i][j] * 1 * derivativeActivation(inputs_layer[i][j]);
                 //запоминаем их тут, чтобы использовать на следующей итерации
 //                deltaOverallLayer[i][j][deltaOverallLayer[i][j].length - 1] = learning_rate * error_neuron[i][j] * outputs_layer[i][j] * (1 - outputs_layer[i][j]) * 1;
             }
